@@ -21,7 +21,7 @@
             Console.WriteLine("The number of nodes ahead are: "+CountNode(Head));
             Console.WriteLine("The first node has a value of: " +GetFirstNode(Head).Value);
             Console.WriteLine("The last node has a value of: "+GetLastNode(Head).Value);
-            Console.WriteLine("All nodes displayed:"); 
+            Console.WriteLine("\nSpecific node and all nodes displayed:"); 
             FindNodePrintAll(Head);
         }
 
@@ -59,27 +59,38 @@
         //Find inside the list and indicate that spot and show the whole list
         public static void FindNodePrintAll(Node Head)
         {
+            //Find specific node
             Node Current = Head;
+            int findNodeVal = 2;
+            int counter = 1;
+            bool flag = false;
 
+            while (flag==false)
+            {
+
+                if (findNodeVal == Current.Value)
+                {
+                    Console.WriteLine("Node '"+findNodeVal+"' is in posistion: " + counter);
+                    
+                    flag = true;
+                }
+                else
+                {
+                    counter++;
+                    Current = Current.next;
+                }
+            }
+            Current = Head;
+            //PrintAll nodes
             for (int i = 0; i < CountNode(Head); i++)
             {
-                Console.WriteLine("Node: "+Current.Value);
+                Console.WriteLine("Node: " + Current.Value);
                 Current = Current.next;
             }
         }
 
-        //public static string PrintNode(Node Head)
-        //{
-        //    string strOutput = "";
-        //    Node Current = Head;
-        //    int count = 0;
-        //    while (Current.next != null)
-        //    {
-        //        strOutput += ($"Node {0} with the value {1}", count, Current.value);
-        //        Current = Current.next;
-        //        count++;
-        //    }
-        //    return strOutput;
-        //}
-    }
+            
+}
+
+    
 }
