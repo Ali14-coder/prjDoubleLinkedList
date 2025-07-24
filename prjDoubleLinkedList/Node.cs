@@ -14,7 +14,7 @@ namespace prjDoubleLinkedList
 
         public Node(int value)
         {
-            this.Value = value;
+            this.Value = value; //returns the value attached to the current node
         }
     }
 }
