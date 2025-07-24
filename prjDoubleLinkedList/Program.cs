@@ -21,7 +21,8 @@
             Console.WriteLine("The number of nodes ahead are: "+CountNode(Head));
             Console.WriteLine("The first node has a value of: " +GetFirstNode(Head).Value);
             Console.WriteLine("The last node has a value of: "+GetLastNode(Head).Value);
-            Console.WriteLine("");
+            Console.WriteLine("All nodes displayed:"); 
+            FindNodePrintAll(Head);
         }
 
         public static int CountNode(Node Head)
@@ -54,12 +55,31 @@
             Node first = Head.next; //assuming the 'Head' is not the first node, but the following node is
             return first;
         }
-        ////Find inside the list and indicate that spot and show the whole list
 
+        //Find inside the list and indicate that spot and show the whole list
         public static void FindNodePrintAll(Node Head)
         {
+            Node Current = Head;
 
+            for (int i = 0; i < CountNode(Head); i++)
+            {
+                Console.WriteLine("Node: "+Current.Value);
+                Current = Current.next;
+            }
         }
 
+        //public static string PrintNode(Node Head)
+        //{
+        //    string strOutput = "";
+        //    Node Current = Head;
+        //    int count = 0;
+        //    while (Current.next != null)
+        //    {
+        //        strOutput += ($"Node {0} with the value {1}", count, Current.value);
+        //        Current = Current.next;
+        //        count++;
+        //    }
+        //    return strOutput;
+        //}
     }
 }
